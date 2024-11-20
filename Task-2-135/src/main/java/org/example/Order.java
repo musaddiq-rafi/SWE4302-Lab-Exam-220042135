@@ -36,14 +36,10 @@ public class Order {
         return subtotal;
     }
 
-//    public double calculateTotal() {
-//            double subtotal = calculateSubTotal();
-//            double tax = 0.08;
-//            return subtotal + (subtotal * tax);
-//    }
 
     public double getTax(){
-        return calculateSubTotal()*0.08;
+        double taxAmount=0.08;
+        return calculateSubTotal()*taxAmount;
     }
 
     public double calculateTotal(){
