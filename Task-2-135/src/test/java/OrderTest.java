@@ -25,7 +25,7 @@ public class OrderTest {
         order.addToping(new Toppings("Crushed Oreo", 0.85));
         order.addToping(new Toppings("Fresh Strawberries", 1.00));
 
-        double expectedTotal = 8.47; // Calculated manually
+        double expectedTotal = 8.47;
         assertEquals(expectedTotal, order.calculateTotal(), 0.01);
     }
 
