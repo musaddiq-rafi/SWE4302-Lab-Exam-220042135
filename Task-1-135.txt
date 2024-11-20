@@ -1,6 +1,8 @@
 Class: globalInventoryData
 Code Smells:
 Line 16-18, Unused Method, The method has not been used anywhere else
+Line 16 -18, Feature Envy , calculateDiscount belongs to the domain of products but is placed here instead
+
 
 
 
@@ -9,4 +11,17 @@ Code Smells:
 Line 1-198 , Large Class, The class has too many lines of code
 Line 41-72 , Long Method, The method has too many lines of code
 Line 44-49 , Conditional Complexity, If statements are repeated again and again
+Line 78-98 , Switch Statements , If possible it is not recommended to use switch statements
+Line 79-97 , Duplicated Logics, Almost same logic is duplicated again and again
+Line 132-167 , Long Method, The method has too many lines of code
+
+
+Class: inventoryManagementSystem
+Code Smells:
+Line 6-27 , Violating SRP , The main method handles initialization, data insertion, and system operation, violating the Single Responsibility Principle
+
+
+Class: warehouse
+Code Smells:
+Line 1-14, Lazy Class, This class is just a data container class without any meaningful method or functionality
 
