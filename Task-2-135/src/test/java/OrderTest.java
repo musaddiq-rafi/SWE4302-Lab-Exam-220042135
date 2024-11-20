@@ -55,7 +55,7 @@ public class OrderTest {
         order.addToping(new Toppings("Sprinkles", 0.30));
         order.addToping(new Toppings("Marshmallow", 0.70));
 
-        double expectedSubTotal = 11.80; // Calculated manually
+        double expectedSubTotal = 11.80;
         assertEquals(expectedSubTotal, order.calculateSubTotal(), 0.01);
     }
 }

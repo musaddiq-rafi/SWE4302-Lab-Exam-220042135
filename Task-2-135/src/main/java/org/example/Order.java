@@ -1,10 +1,11 @@
+
 package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private List<Flavor> flavors;
-    private List<Toppings> toppings;
+    private List<IFlavor> flavors;
+    private List<IToppings> toppings;
     private boolean isWaffleCone;
 
     public Order(boolean isWaffleCone) {
@@ -12,54 +13,40 @@ public class Order {
         this.toppings = new ArrayList<>();
         this.isWaffleCone = isWaffleCone;
     }
-    public void addFlavor(Flavor flavor) {
+
+    public void addFlavor(IFlavor flavor) {
         this.flavors.add(flavor);
     }
-    public void addToping(Toppings toping){
+
+    public void addToping(IToppings toping){
         this.toppings.add(toping);
     }
 
     public double calculateSubTotal(){
-        double subtotal=0;
-        if(isWaffleCone()){
-             subtotal= 5.00;
-        }
-        else{
-             subtotal= 0.00;
-        }
-        for (Flavor flavor : flavors) {
+        double subtotal = isWaffleCone ? 5.00 : 0.00;
+        for (IFlavor flavor : flavors) {
             subtotal += flavor.getPricePerScoop();
         }
-        for (Toppings topping : toppings) {
+        for (IToppings topping : toppings) {
             subtotal += topping.getPrice();
         }
         return subtotal;
     }
 
-
     public double getTax(){
-        double taxAmount=0.08;
-        return calculateSubTotal()*taxAmount;
+        return calculateSubTotal() * 0.08;
     }
 
     public double calculateTotal(){
-        return calculateSubTotal()+getTax();
+        return calculateSubTotal() + getTax();
     }
 
-    public List<Flavor> getFlavors() {
+    public List<IFlavor> getFlavors() {
         return flavors;
     }
 
-    public void setFlavors(List<Flavor> flavors) {
-        this.flavors = flavors;
-    }
-
-    public List<Toppings> getToppings() {
+    public List<IToppings> getToppings() {
         return toppings;
-    }
-
-    public void setToppings(List<Toppings> toppings) {
-        this.toppings = toppings;
     }
 
     public boolean isWaffleCone() {

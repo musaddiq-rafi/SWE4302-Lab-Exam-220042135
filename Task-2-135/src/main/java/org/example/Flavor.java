@@ -1,6 +1,6 @@
 package org.example;
 
-public class Flavor {
+public class Flavor implements IFlavor {
     private final String name;
     private final double pricePerScoop;
 

@@ -1,6 +1,6 @@
 package org.example;
 
-public class Toppings {
+public class Toppings implements IToppings {
     private final String name;
     private final double price;
 
